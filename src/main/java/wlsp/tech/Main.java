@@ -1,7 +1,13 @@
 package wlsp.tech;
 
+//import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
-    static int MIND_LENGTH = 8;
+    //public static String EXAMPLE_PW_8_CHAR = "MIN_EIGHTH_CHARACTERS";
+
+    static Pattern MIN_LENGTH_REGEX = Pattern.compile(".{8,}$");
+    //static Matcher matcher = MIN_LENGTH_REGEX.matcher(EXAMPLE_PW_8_CHAR);
 
    /*@TODO to implement when all methods are ready to use
     Scanner sc = new Scanner(System.in);
@@ -15,6 +21,7 @@ public class Main {
     }
 
     public static boolean eighthCharactersOrMore(String password) {
-        return password.length() > MIND_LENGTH;
+        return MIN_LENGTH_REGEX.matcher(password).matches();
     }
+
 }

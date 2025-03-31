@@ -6,11 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
-
     @Test
     void eighthCharactersOrMore_shouldReturnTrue_whenStringIsEighthCharactersOrMore() {
         //GIVEN
-        String password = "HASEIGHTHORMORE";
+        String password = "MIN_EIGHTH_CHARACTERS";
 
         //WHEN
         boolean actual = Main.eighthCharactersOrMore(password);
