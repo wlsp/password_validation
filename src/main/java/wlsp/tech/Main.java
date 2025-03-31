@@ -8,9 +8,12 @@ public class Main {
     //static Matcher matcher = MIN_LENGTH_REGEX.matcher(EXAMPLE_PW_8_CHAR);
 
 
-    //CASES:
+    //CASES
     static Pattern MIN_LENGTH_REGEX = Pattern.compile(".{8,}$");
     static Pattern MIN_LENGTH_REGEX_NO_WHITESPACE_REGEX = Pattern.compile("^(\\S{8,})$");
+    static Pattern HAS_AT_LEAST_ONE_NUMBER_REGEX = Pattern.compile(".*[0-9].*");
+    static Pattern IS_ONLY_NUMBER_REGEX = Pattern.compile("^[0-9]");
+    static Pattern HAS_LOWERCASE_AND_UPPERCASE_REGEX = Pattern.compile("(?=.*[a-z])(?=.*[A-Z]).*");
 
 
    /*@TODO to implement when all methods are ready to use
@@ -32,6 +35,21 @@ public class Main {
     //Password should not contain whitespace
     public static boolean minLengthWithOutWhitespace(String password) {
         return MIN_LENGTH_REGEX_NO_WHITESPACE_REGEX.matcher(password).matches();
+    }
+
+    //Password should have at least one number
+    public static boolean hasNumber(String password) {
+        return HAS_AT_LEAST_ONE_NUMBER_REGEX.matcher(password).matches();
+    }
+
+    //Password should NOT be only NUMBERS
+    public static boolean isOnlyNumbers( String password) {
+        return IS_ONLY_NUMBER_REGEX.matcher(password).matches();
+    }
+
+    //Password should have at least one upper and one lower case letter
+    public static boolean hasLowercaseAndUppercase(String password) {
+        return HAS_LOWERCASE_AND_UPPERCASE_REGEX.matcher(password).matches();
     }
 
 }
