@@ -59,4 +59,12 @@ class MainTest {
 
         assertTrue(actual);
     }
+
+    //IS_NOT_FREQUENTLY_USE
+    @Test
+    void isNotFrequently_shouldReturnTrue_whenStringIsNotFrequently() {
+        boolean actual = Main.isNotFrequentlyUse(password);
+
+        assertFalse(actual);
+    }
 }
