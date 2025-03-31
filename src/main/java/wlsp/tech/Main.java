@@ -5,9 +5,13 @@ import java.util.regex.Pattern;
 
 public class Main {
     //public static String EXAMPLE_PW_8_CHAR = "MIN_EIGHTH_CHARACTERS";
-
-    static Pattern MIN_LENGTH_REGEX = Pattern.compile(".{8,}$");
     //static Matcher matcher = MIN_LENGTH_REGEX.matcher(EXAMPLE_PW_8_CHAR);
+
+
+    //CASES:
+    static Pattern MIN_LENGTH_REGEX = Pattern.compile(".{8,}$");
+    static Pattern MIN_LENGTH_REGEX_NO_WHITESPACE_REGEX = Pattern.compile("^(\\S{8,})$");
+
 
    /*@TODO to implement when all methods are ready to use
     Scanner sc = new Scanner(System.in);
@@ -20,8 +24,14 @@ public class Main {
         System.out.println("Hello, World!");
     }
 
-    public static boolean eighthCharactersOrMore(String password) {
+    //Password should have at least 8 Characters
+    public static boolean minLength(String password) {
         return MIN_LENGTH_REGEX.matcher(password).matches();
+    }
+
+    //Password should not contain whitespace
+    public static boolean minLengthWithOutWhitespace(String password) {
+        return MIN_LENGTH_REGEX_NO_WHITESPACE_REGEX.matcher(password).matches();
     }
 
 }
