@@ -14,6 +14,7 @@ public class Main {
     static Pattern HAS_AT_LEAST_ONE_NUMBER_REGEX = Pattern.compile(".*[0-9].*");
     static Pattern IS_ONLY_NUMBER_REGEX = Pattern.compile("^[0-9]");
     static Pattern HAS_LOWERCASE_AND_UPPERCASE_REGEX = Pattern.compile("(?=.*[a-z])(?=.*[A-Z]).*");
+    static Pattern HAS_AT_LEAST_ONE_SPECIAL_CHARACTER_REGEX = Pattern.compile(".*[#!?@$%^&*-].*");
 
 
    /*@TODO to implement when all methods are ready to use
@@ -50,6 +51,11 @@ public class Main {
     //Password should have at least one upper and one lower case letter
     public static boolean hasLowercaseAndUppercase(String password) {
         return HAS_LOWERCASE_AND_UPPERCASE_REGEX.matcher(password).matches();
+    }
+
+    //Password should have at least one special character
+    public static boolean hasAtLeastOneSpecialCharacter(String password) {
+        return HAS_AT_LEAST_ONE_SPECIAL_CHARACTER_REGEX.matcher(password).matches();
     }
 
 }

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     //@INFO MIN_LENGTH: 8 Characters
-    static String password = "MIN_8_CHARACTERS_i";
+    static String password = "MIN_8_CHARACTERS_i!";
 
     //MIN_LENGTH
     @Test
@@ -44,9 +44,18 @@ class MainTest {
         assertFalse(actual);
     }
 
+    //HAS_UPPER_AND_LOWER_CASE_CHARACTER
     @Test
     void hasUpperCaseAndLowerCase_shouldReturnTrue_whenStringHasUpperCaseAndLowerCase() {
         boolean actual = Main.hasLowercaseAndUppercase(password);
+
+        assertTrue(actual);
+    }
+
+    //HAS_AT_LEAST_ONE_SPECIAL_CHARACTER
+    @Test
+    void hasAtLeastOneSpecialCharacter_shouldReturnTrue_whenStringHasAtLeastOneSpecialCharacter() {
+        boolean actual = Main.hasAtLeastOneSpecialCharacter(password);
 
         assertTrue(actual);
     }
