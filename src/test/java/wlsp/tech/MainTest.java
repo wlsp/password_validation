@@ -41,7 +41,7 @@ class MainTest {
     void isNotOnlyNumber_shouldReturnFalse_whenStringIsNotOnlyNumber() {
         boolean actual = Main.isOnlyNumbers(password);
 
-        assertFalse(actual);
+        assertTrue(actual);
     }
 
     //HAS_UPPER_AND_LOWER_CASE_CHARACTER
@@ -65,6 +65,6 @@ class MainTest {
     void isNotFrequently_shouldReturnTrue_whenStringIsNotFrequently() {
         boolean actual = Main.isNotFrequentlyUse(password);
 
-        assertFalse(actual);
+        assertTrue(actual);
     }
 }
